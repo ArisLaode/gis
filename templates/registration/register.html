@@ -1,4 +1,5 @@
 {% load static %}
+{% block title %}Register{% endblock %}
 
 <!DOCTYPE html>
 <html>
@@ -29,8 +30,9 @@
   <div class="card">
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
-
-      <form action="../../index.html" method="post">
+      {% block content %}
+      <form action="{% url 'home' %}" method="post">
+          {% csrf_token %}
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Full name">
           <div class="input-group-append">
@@ -79,6 +81,7 @@
           <!-- /.col -->
         </div>
       </form>
+      {% endblock %}
 
       <a href="{% url 'login' %}" class="text-center">I already have a membership</a>
     </div>
