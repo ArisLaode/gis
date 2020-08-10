@@ -281,22 +281,19 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-        </div>
-        <!-- /.row -->
         <!-- Main row -->
         <div class="row">
+            <section class="col-lg-12 connectedSortable">
+                <div class="timeline-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                  </div>
+            </section>
+        </div>
           <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
 
-          </section>
-          <!-- right col -->
+          <!-- /.Left col -->
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
@@ -354,6 +351,7 @@
 <script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{% static 'dist/js/demo.js' %}"></script>
+
 </body>
 </html>
 {% endblock %}
