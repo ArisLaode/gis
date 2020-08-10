@@ -1,1 +1,0 @@
-web: gunicorn gisdemo.wsgi --log-file -
