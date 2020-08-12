@@ -66,14 +66,7 @@ def ownerPayment(request):
     return render(request, 'owner/payment.html')
 
 def login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect('/home/')
-    else:
-        form = LoginForm
-
-    return render(request, 'registration/home.html')
+    return render(request, 'registration/login.html')
 
 def register(request):
     return render(request, 'registration/register.html')

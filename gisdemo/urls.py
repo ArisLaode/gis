@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
+from gis import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('gis/', include('gis.urls')),
-    # path('', include('gis.urls')),
+    path('', views.login, name='index'),
 ]
