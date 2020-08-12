@@ -28,6 +28,91 @@
   <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.css' %}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Calendar css -->
+  <style>
+      * {box-sizing: border-box;}
+      ul {list-style-type: none;}
+      body {font-family: Verdana, sans-serif;}
+      
+      .month {
+        padding: 70px 25px;
+        width: 100%;
+        background: #1abc9c;
+        text-align: center;
+      }
+      
+      .month ul {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .month ul li {
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      
+      .month .prev {
+        float: left;
+        padding-top: 10px;
+      }
+      
+      .month .next {
+        float: right;
+        padding-top: 10px;
+      }
+      
+      .weekdays {
+        margin: 0;
+        padding: 10px 0;
+        background-color: #ddd;
+      }
+      
+      .weekdays li {
+        display: inline-block;
+        width: 13.6%;
+        color: #666;
+        text-align: center;
+      }
+      
+      .days {
+        padding: 10px 0;
+        background: #eee;
+        margin: 0;
+      }
+      
+      .days li {
+        list-style-type: none;
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size:12px;
+        color: #777;
+      }
+      
+      .days li .active {
+        padding: 5px;
+        background: #1abc9c;
+        color: white !important
+      }
+      
+      /* Add media queries for smaller screens */
+      @media screen and (max-width:720px) {
+        .weekdays li, .days li {width: 13.1%;}
+      }
+      
+      @media screen and (max-width: 420px) {
+        .weekdays li, .days li {width: 12.5%;}
+        .days li .active {padding: 2px;}
+      }
+      
+      @media screen and (max-width: 290px) {
+        .weekdays li, .days li {width: 12.2%;}
+      }
+  </style>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -432,42 +517,62 @@
             </div>
           </div>
           <div class="col-12 col-sm-6">
-            <div class="card card-primary card-tabs">
-              <div class="card-header p-0 pt-1">
-                <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
-                  <li class="pt-2 px-3"><h3 class="card-title">Card Title</h3></li>
-                  <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">Messages</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">Settings</a>
-                  </li>
-                </ul>
+              <div class="card card-primary card-tabs">
+                  <div class="month">      
+                      <ul>
+                        <li class="prev">&#10094;</li>
+                        <li class="next">&#10095;</li>
+                        <li>
+                          August<br>
+                          <span style="font-size:18px">2020</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <ul class="weekdays">
+                      <li>Mo</li>
+                      <li>Tu</li>
+                      <li>We</li>
+                      <li>Th</li>
+                      <li>Fr</li>
+                      <li>Sa</li>
+                      <li>Su</li>
+                    </ul>
+                    
+                    <ul class="days">  
+                      <li>1</li>
+                      <li>2</li>
+                      <li>3</li>
+                      <li>4</li>
+                      <li>5</li>
+                      <li>6</li>
+                      <li>7</li>
+                      <li>8</li>
+                      <li>9</li>
+                      <li>10</li>
+                      <li>11</li>
+                      <li>12</li>
+                      <li>13</li>
+                      <li><span class="active">14</span></li>
+                      <li>15</li>
+                      <li>16</li>
+                      <li>17</li>
+                      <li>18</li>
+                      <li>19</li>
+                      <li>20</li>
+                      <li>21</li>
+                      <li>22</li>
+                      <li>23</li>
+                      <li>24</li>
+                      <li>25</li>
+                      <li>26</li>
+                      <li>27</li>
+                      <li>28</li>
+                      <li>29</li>
+                      <li>30</li>
+                      <li>31</li>
+                    </ul>
               </div>
-              <div class="card-body">
-                <div class="tab-content" id="custom-tabs-two-tabContent">
-                  <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur. 
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
-                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
-                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-two-settings" role="tabpanel" aria-labelledby="custom-tabs-two-settings-tab">
-                     Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis. 
-                  </div>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -525,6 +630,80 @@
 <script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{% static 'dist/js/demo.js' %}"></script>
+<script>
+$('#calendar').fullCalendar({
+    defaultView: 'month',
+    defaultDate: '2018-11-12',
+
+    eventRender: function (eventObj, $el) {
+        $el.popover({
+            title: eventObj.title,
+            content: eventObj.description,
+            trigger: 'hover',
+            placement: 'top',
+            container: 'body'
+        });
+    },
+
+    events: [{
+            title: 'All Day Event',
+            description: 'description for All Day Event',
+            start: '2018-11-01'
+        },
+        {
+            title: 'Long Event',
+            description: 'description for Long Event',
+            start: '2018-10-07',
+            end: '2018-11-10'
+        },
+        {
+            id: 999,
+            title: 'Repeating Event',
+            description: 'description for Repeating Event',
+            start: '2018-11-09T16:00:00'
+        },
+        {
+            id: 999,
+            title: 'Repeating Event',
+            description: 'description for Repeating Event',
+            start: '2018-11-16T16:00:00'
+        },
+        {
+            title: 'Conference',
+            description: 'description for Conference',
+            start: '2018-11-11',
+            end: '2018-11-13'
+        },
+        {
+            title: 'Meeting',
+            description: 'description for Meeting',
+            start: '2018-11-12T10:30:00',
+            end: '2018-11-12T12:30:00'
+        },
+        {
+            title: 'Lunch',
+            description: 'description for Lunch',
+            start: '2018-11-12T12:00:00'
+        },
+        {
+            title: 'Meeting',
+            description: 'description for Meeting',
+            start: '2018-11-12T14:30:00'
+        },
+        {
+            title: 'Birthday Party',
+            description: 'description for Birthday Party',
+            start: '2018-11-13T07:00:00'
+        },
+        {
+            title: 'Click for Google',
+            description: 'description for Click for Google',
+            url: 'http://google.com/',
+            start: '2018-11-28'
+        }
+    ]
+});
+</script>
 </body>
 </html>
 {% endblock %}
